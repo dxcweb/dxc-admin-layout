@@ -8,17 +8,12 @@ export default class index extends React.PureComponent {
     return renderLogo ? renderLogo() : "logo";
   };
   render() {
-    const { isLogin, loginLoading, onLogin, route, location, username, onLogout } = this.props;
+    const { isLogin, loginLoading, onLogin, route, location, username, onLogout, children } = this.props;
     return (
       <Login isLogin={isLogin} loading={loginLoading} onLogin={onLogin}>
-        <BasicLayout
-          onLogout={onLogout}
-          route={route}
-          location={location}
-          siteName="dxcweb"
-          logo={this.renderLogo()}
-          username={username}
-        />
+        <BasicLayout onLogout={onLogout} route={route} location={location} siteName="dxcweb" logo={this.renderLogo()} username={username}>
+          {children}
+        </BasicLayout>
       </Login>
     );
   }
