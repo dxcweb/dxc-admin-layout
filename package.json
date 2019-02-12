@@ -1,0 +1,37 @@
+{
+  "name": "dxc-admin-layout",
+  "version": "1.0.1",
+  "description": "audio",
+  "config": {
+    "port": 7201
+  },
+  "main": "./lib",
+  "scripts": {
+    "build": "rc-tools run build",
+    "start": "rc-tools run server",
+    "css": "rc-tools run css",
+    "pub": "rc-tools run publish",
+    "dist": "rc-tools run compile && rc-tools run dist"
+  },
+  "devDependencies": {
+    "antd": "^3.13.0",
+    "rc-tools": "^7.0.8",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "files": [
+    "assets",
+    "examples",
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dva": "^2.4.1",
+    "dxc-flex": "^1.0.3",
+    "is_js": "^0.9.0",
+    "memoize-one": "^5.0.0",
+    "react-document-title": "^2.0.3",
+    "umi": "^2.4.4"
+  }
+}
