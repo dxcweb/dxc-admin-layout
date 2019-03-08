@@ -10,7 +10,7 @@ function createAxios(baseURL, dispatch) {
     (config) => {
       const headers = getHeaders();
       if (headers) {
-        config.headers = { ...config.headers, headers };
+        config.headers = { ...config.headers, ...headers };
       }
       return config;
     },

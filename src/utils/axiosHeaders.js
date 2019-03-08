@@ -5,4 +5,4 @@ const setHeaders = (value) => {
 const getHeaders = (value) => {
   return headers;
 };
-export { setHeaders, getHeaders };
+export default { setHeaders, getHeaders };
