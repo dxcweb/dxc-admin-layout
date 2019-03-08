@@ -43,9 +43,9 @@ class LoginFrom extends React.PureComponent {
     return (
       <Card style={{ width: 400 }} title="登录">
         <Form onKeyDown={this.onKeyPress}>
-          <Form.Item label="用户名" hasFeedback>
-            {getFieldDecorator("username", {
-              rules: [{ required: true, message: "请填写用户名" }],
+          <Form.Item label="账号" hasFeedback>
+            {getFieldDecorator("account", {
+              rules: [{ required: true, message: "请填写账号" }],
             })(
               <Input
                 autocapitalize="off"
