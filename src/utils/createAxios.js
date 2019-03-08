@@ -1,12 +1,25 @@
 import axios from "axios";
 import { routerRedux } from "dva/router";
+import { getHeaders } from "./axiosHeaders";
 function createAxios(baseURL, dispatch) {
   const instance = axios.create({
     baseURL,
   });
 
+  instance.interceptors.request.use(
+    (config) => {
+      const headers = getHeaders();
+      if (headers) {
+        config.headers = { ...config.headers, headers };
+      }
+      return config;
+    },
+    (error) => {
+      return Promise.reject(error);
+    },
+  );
   instance.interceptors.response.use(
-    response => {
+    (response) => {
       const { data } = response;
       if (data) {
         return data;
@@ -14,7 +27,7 @@ function createAxios(baseURL, dispatch) {
         return Promise.reject(new Error("Response data error!"));
       }
     },
-    error => {
+    (error) => {
       const { status } = error.response;
       if (status === 401) {
         dispatch({ type: "base/save", payload: { loginLoading: false } });
