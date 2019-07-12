@@ -4,7 +4,7 @@ import LoginFrom from "./LoginFrom";
 import is from "is_js";
 const isMobile = is.mobile();
 const timg =
-  "https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1473656207465&di=02acc31f176091e5dca7b45c1c0a52af&imgtype=jpg&src=http%3A%2F%2Fimg15.3lian.com%2F2015%2Ff1%2F134%2Fd%2F11.jpg";
+  "https//oss.tuobacco.com/wop2/2019-07-09/5d24078c6a916.jpg";
 
 export default class index extends React.PureComponent {
   render() {

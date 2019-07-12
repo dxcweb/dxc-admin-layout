@@ -1,6 +1,6 @@
 {
   "name": "dxc-admin-layout",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "audio",
   "config": {
     "port": 7201
@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "antd": "^3.13.0",
-    "rc-tools": "^7.0.8",
+    "rc-tools": "^8.4.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
