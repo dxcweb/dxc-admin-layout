@@ -1,7 +1,7 @@
 import axios from "axios";
 import { routerRedux } from "dva/router";
 import { getHeaders } from "./axiosHeaders";
-function createAxios(baseURL, dispatch) {
+function createAxios(baseURL) {
   const instance = axios.create({
     baseURL,
   });
@@ -28,6 +28,10 @@ function createAxios(baseURL, dispatch) {
       }
     },
     (error) => {
+      let dispatch;
+      if (window.g_app && window.g_app._store) {
+        dispatch = window.g_app._store.dispatch;
+      }
       const { status } = error.response;
       if (status === 401) {
         dispatch({ type: "base/save", payload: { loginLoading: false } });
