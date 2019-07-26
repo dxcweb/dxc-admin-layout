@@ -2,9 +2,8 @@ import React from "react";
 import Block from "dxc-flex";
 import LoginFrom from "./LoginFrom";
 import is from "is_js";
+import timg from "../../assets/bg.jpg";
 const isMobile = is.mobile();
-const timg =
-  "https://oss.tuobacco.com/wop2/2019-07-09/5d24078c6a916.jpg";
 
 export default class index extends React.PureComponent {
   render() {
