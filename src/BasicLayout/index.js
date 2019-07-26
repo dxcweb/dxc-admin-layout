@@ -25,7 +25,7 @@ const { Sider } = Layout;
 // Conversion router to menu.
 function formatter(data, parentAuthority) {
   const arr = data
-    .map(item => {
+    .map((item) => {
       if (!item.path) {
         return null;
       }
@@ -48,7 +48,7 @@ function formatter(data, parentAuthority) {
       delete result.routes;
       return result;
     })
-    .filter(item => item);
+    .filter((item) => item);
   return orderBy(arr, ["sort"]);
 }
 
@@ -78,8 +78,8 @@ export default class BasicLayout extends React.PureComponent {
    */
   getBreadcrumbNameMap() {
     const routerMap = {};
-    const mergeMenuAndRouter = data => {
-      data.forEach(menuItem => {
+    const mergeMenuAndRouter = (data) => {
+      data.forEach((menuItem) => {
         if (menuItem.children) {
           mergeMenuAndRouter(menuItem.children);
         }
@@ -91,12 +91,12 @@ export default class BasicLayout extends React.PureComponent {
     return routerMap;
   }
 
-  matchParamsPath = pathname => {
-    const pathKey = Object.keys(this.breadcrumbNameMap).find(key => pathToRegexp(key).test(pathname));
+  matchParamsPath = (pathname) => {
+    const pathKey = Object.keys(this.breadcrumbNameMap).find((key) => pathToRegexp(key).test(pathname));
     return this.breadcrumbNameMap[pathKey];
   };
 
-  getPageTitle = pathname => {
+  getPageTitle = (pathname) => {
     const { siteName } = this.props;
     const currRouterData = this.matchParamsPath(pathname);
 
@@ -110,7 +110,7 @@ export default class BasicLayout extends React.PureComponent {
     const { collapsed } = this.state;
     this.setState({ collapsed: !collapsed });
   };
-  onCollapse = collapsed => {
+  onCollapse = (collapsed) => {
     setTimeout(() => {
       this.setState({ collapsed });
     }, 200);
@@ -122,8 +122,10 @@ export default class BasicLayout extends React.PureComponent {
     }
   };
   myMenu = () => {
+    const { renderDropdownMenu } = this.props;
     return (
       <Menu style={{ minWidth: 130 }} selectedKeys={[]} onClick={this.onMyMenuClick}>
+        {renderDropdownMenu ? renderDropdownMenu() : null}
         <Menu.Item key="logout">
           <Icon type="logout" />
           退出登录
