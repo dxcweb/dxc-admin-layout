@@ -1,6 +1,6 @@
 {
   "name": "dxc-admin-layout",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "audio",
   "config": {
     "port": 7201
