@@ -7,7 +7,7 @@ const isMobile = is.mobile();
 
 export default class index extends React.PureComponent {
   render() {
-    const { onLogin, loading, isLogin, children } = this.props;
+    const { onLogin, loading, isLogin, children, verificationCode } = this.props;
     if (isLogin) {
       return children;
     }
@@ -32,7 +32,7 @@ export default class index extends React.PureComponent {
                 width: isMobile ? "100%" : "auto",
               }}
             >
-              <LoginFrom loading={loading} onLogin={onLogin} />
+              <LoginFrom loading={loading} onLogin={onLogin} verificationCode={verificationCode} />
             </Block>
           </div>
         </div>

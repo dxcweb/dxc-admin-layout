@@ -7,7 +7,6 @@ import Input from "antd/lib/input";
 import "antd/lib/input/style/index.less";
 import Button from "antd/lib/button";
 import "antd/lib/button/style/index.less";
-
 import Block from "dxc-flex";
 
 class LoginFrom extends React.PureComponent {
@@ -21,7 +20,7 @@ class LoginFrom extends React.PureComponent {
     });
   };
 
-  onKeyPress = e => {
+  onKeyPress = (e) => {
     if (e.keyCode === 13) {
       this.handleSubmit();
     }
@@ -39,6 +38,7 @@ class LoginFrom extends React.PureComponent {
     clearTimeout(this.blurTimeout);
   };
   render() {
+    const { verificationCode } = this.props;
     const { getFieldDecorator } = this.props.form;
     return (
       <Card style={{ width: 400 }} title="登录">
@@ -70,6 +70,20 @@ class LoginFrom extends React.PureComponent {
               />,
             )}
           </Form.Item>
+          {verificationCode ? (
+            <Block vertical="end">
+              <div style={{ flex: 1, marginRight: 20 }}>
+                <Form.Item label="验证码" hasFeedback>
+                  {getFieldDecorator("code", {
+                    rules: [{ required: true, message: "请输入密码" }],
+                  })(<Input onFocus={this.onFocus} onBlur={this.onBlur} style={{ height: 40 }} placeholder="密码长度为6~16位字符" />)}
+                </Form.Item>
+              </div>
+              <Form.Item hasFeedback>
+                <div>{verificationCode}</div>
+              </Form.Item>
+            </Block>
+          ) : null}
           <Block style={{ padding: "5px 0" }}>
             <Button size="large" type="primary" style={{ width: "100%" }} loading={this.props.loading} onClick={this.handleSubmit}>
               登录
