@@ -48,8 +48,8 @@ class LoginFrom extends React.PureComponent {
               rules: [{ required: true, message: "请填写账号" }],
             })(
               <Input
-                autocapitalize="off"
-                autocorrect="off"
+                autoCapitalize="off"
+                autoCorrect="off"
                 onFocus={this.onFocus}
                 onBlur={this.onBlur}
                 style={{ height: 40 }}
