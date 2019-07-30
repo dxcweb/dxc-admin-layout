@@ -45,7 +45,7 @@ class LoginFrom extends React.PureComponent {
         <Form onKeyDown={this.onKeyPress}>
           <Form.Item label="账号" hasFeedback>
             {getFieldDecorator("account", {
-              rules: [{ required: true, message: "请填写账号" }],
+              rules: [{ required: true, message: "请输入账号" }],
             })(
               <Input
                 autoCapitalize="off"
@@ -53,7 +53,7 @@ class LoginFrom extends React.PureComponent {
                 onFocus={this.onFocus}
                 onBlur={this.onBlur}
                 style={{ height: 40 }}
-                placeholder="用户名长度为6~16位字符"
+                placeholder="请输入账号"
               />,
             )}
           </Form.Item>
@@ -66,7 +66,7 @@ class LoginFrom extends React.PureComponent {
                 onBlur={this.onBlur}
                 style={{ height: 40 }}
                 type="password"
-                placeholder="密码长度为6~16位字符"
+                placeholder="请输入密码"
               />,
             )}
           </Form.Item>
@@ -76,7 +76,7 @@ class LoginFrom extends React.PureComponent {
                 <Form.Item label="验证码" hasFeedback>
                   {getFieldDecorator("code", {
                     rules: [{ required: true, message: "请输入验证码" }],
-                  })(<Input onFocus={this.onFocus} onBlur={this.onBlur} style={{ height: 40 }} placeholder="验证码长度为4位字符" />)}
+                  })(<Input onFocus={this.onFocus} onBlur={this.onBlur} style={{ height: 40 }} placeholder="请输入验证码" />)}
                 </Form.Item>
               </div>
               <Form.Item hasFeedback>
