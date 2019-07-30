@@ -76,11 +76,11 @@ class LoginFrom extends React.PureComponent {
                 <Form.Item label="验证码" hasFeedback>
                   {getFieldDecorator("code", {
                     rules: [{ required: true, message: "请输入验证码" }],
-                  })(<Input onFocus={this.onFocus} onBlur={this.onBlur} style={{ height: 40 }} placeholder="请输入验证码" />)}
+                  })(<Input onFocus={this.onFocus} onBlur={this.onBlur} style={{ height: 40 }} placeholder="验证码长度为4位字符" />)}
                 </Form.Item>
               </div>
               <Form.Item hasFeedback>
-                <div>{verificationCode}</div>
+                <div style={{ display: "flex", alignItems: "center" }}>{verificationCode}</div>
               </Form.Item>
             </Block>
           ) : null}
