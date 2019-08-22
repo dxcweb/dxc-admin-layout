@@ -104,7 +104,7 @@ export default class BasicLayout extends React.PureComponent {
       return siteName;
     }
     const name = currRouterData.name;
-    return `${name} - ${siteName}`;
+    return `${name}`;
   };
   toggleCollapsed = () => {
     const { collapsed } = this.state;
