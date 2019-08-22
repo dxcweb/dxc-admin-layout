@@ -7,7 +7,7 @@ const isMobile = is.mobile();
 
 export default class index extends React.PureComponent {
   render() {
-    const { onLogin, loading, isLogin, children, verificationCode } = this.props;
+    const { onLogin, loading, isLogin, children, verificationCode, bgImg } = this.props;
     if (isLogin) {
       return children;
     }
@@ -15,9 +15,10 @@ export default class index extends React.PureComponent {
       <Block layout="vertical" style={{ height: "100vh" }}>
         <div
           style={{
-            background: `url(${timg}) 100% 100% no-repeat`,
-            flex: 1,
-            position: "relative",
+            backgroundImage: `url(${bgImg ? bgImg : timg})`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
           }}
         >
           <div className="flex-child">
