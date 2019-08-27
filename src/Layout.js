@@ -21,9 +21,17 @@ export default class index extends React.PureComponent {
       renderDropdownMenu,
       bgImg,
       siteName = "dxcweb",
+      loginTitle = "登录",
     } = this.props;
     return (
-      <Login bgImg={bgImg} isLogin={isLogin} loading={loginLoading} onLogin={onLogin} verificationCode={verificationCode}>
+      <Login
+        loginTitle={loginTitle}
+        bgImg={bgImg}
+        isLogin={isLogin}
+        loading={loginLoading}
+        onLogin={onLogin}
+        verificationCode={verificationCode}
+      >
         <BasicLayout
           onLogout={onLogout}
           route={route}

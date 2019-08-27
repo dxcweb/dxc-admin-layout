@@ -7,14 +7,17 @@ const isMobile = is.mobile();
 
 export default class index extends React.PureComponent {
   render() {
-    const { onLogin, loading, isLogin, children, verificationCode, bgImg } = this.props;
+    const { onLogin, loading, isLogin, children, verificationCode, bgImg, loginTitle } = this.props;
     if (isLogin) {
       return children;
     }
     return (
-      <Block layout="vertical" style={{ height: "100vh" }}>
-        <div
+      <DocumentTitle title={loginTitle}>
+        <Block
+          layout="vertical"
           style={{
+            width: "100%",
+            height: "100vh",
             backgroundImage: `url(${bgImg ? bgImg : timg})`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
@@ -36,8 +39,8 @@ export default class index extends React.PureComponent {
               <LoginFrom loading={loading} onLogin={onLogin} verificationCode={verificationCode} />
             </Block>
           </div>
-        </div>
-      </Block>
+        </Block>
+      </DocumentTitle>
     );
   }
 }
