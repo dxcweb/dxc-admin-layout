@@ -3,6 +3,8 @@ import Block from "dxc-flex";
 import LoginFrom from "./LoginFrom";
 import is from "is_js";
 import timg from "../../assets/bg.jpg";
+import DocumentTitle from "react-document-title";
+
 const isMobile = is.mobile();
 
 export default class index extends React.PureComponent {
