@@ -1,0 +1,28 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+body .ant-card-body {
+  padding: 10px 24px 20px 24px;
+}
+body .ant-card-head {
+  min-height: 40px;
+}
+body .ant-card-head-title {
+  padding: 12px 0;
+}
+.clearfix:after {
+  content: '.';
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
