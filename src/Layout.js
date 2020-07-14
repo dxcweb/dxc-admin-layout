@@ -22,6 +22,7 @@ export default class index extends React.PureComponent {
       bgImg,
       siteName = "dxcweb",
       loginTitle = "登录",
+      renderLogo,
     } = this.props;
     return (
       <Login
@@ -38,7 +39,7 @@ export default class index extends React.PureComponent {
           location={location}
           siteName={siteName}
           renderDropdownMenu={renderDropdownMenu}
-          logo={this.renderLogo()}
+          renderLogo={renderLogo?renderLogo:this.renderLogo}
           username={username}
         >
           {children}

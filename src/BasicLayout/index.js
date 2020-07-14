@@ -138,7 +138,7 @@ export default class BasicLayout extends React.PureComponent {
       children,
       location: { pathname },
       username,
-      logo,
+      renderLogo,
     } = this.props;
     const { collapsed } = this.state;
     const currRouterData = this.matchParamsPath(pathname);
@@ -184,7 +184,7 @@ export default class BasicLayout extends React.PureComponent {
               vertical="center"
               style={{ fontSize: 18, height: 48, color: "#fff", borderBottom: "1px solid #676767" }}
             >
-              {logo}
+              {renderLogo(collapsed)}
             </Block>
             <SiderMenu collapsed={collapsed} pathname={pathname} menuData={this.getMenuData()} />
           </Sider>
