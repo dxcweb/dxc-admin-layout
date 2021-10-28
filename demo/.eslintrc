@@ -1,7 +1,0 @@
-{
-  "extends": "eslint-config-umi",
-  "plugins": ["prettier"], // eslint-plugin-prettier
-  "rules": {
-    "prettier/prettier": "error"
-  }
-}

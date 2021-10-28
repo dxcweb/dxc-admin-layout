@@ -1,0 +1,60 @@
+{
+  "name": "dxc-admin-layout",
+  "version": "1.2.0",
+  "main": "lib/index.js",
+  "files": [
+    "assets",
+    "typings",
+    "src",
+    "lib"
+  ],
+  "scripts": {
+    "pub": "npm run build && npm publish",
+    "build": "nwb build-react-component",
+    "clean": "nwb clean-module && nwb clean-demo",
+    "prepublishOnly": "npm run build",
+    "start": "nwb serve-react-demo",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dva": "^2.4.1",
+    "dxc-flex": "^1.0.3",
+    "is_js": "^0.9.0",
+    "memoize-one": "^5.0.0",
+    "react-document-title": "^2.0.3"
+  },
+  "peerDependencies": {
+    "react": "16.x"
+  },
+  "devDependencies": {
+    "umi": "^2.4.4",
+    "antd": "^3.13.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.0.0",
+    "eslint-config-umi": "^1.6.0",
+    "eslint-plugin-flowtype": "^4.7.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "nwb": "0.24.x",
+    "nwb-less": "^0.8.0",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "author": "",
+  "homepage": "",
+  "license": "MIT",
+  "repository": "",
+  "keywords": [
+    "react-component"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

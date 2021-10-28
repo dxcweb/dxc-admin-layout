@@ -1,0 +1,17 @@
+.item{
+    width: 50px;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid red;
+    text-align: center;
+    font-weight: 700;
+}
+.okBtn{
+    width: 100px;
+    height: 32px;
+    background: #4395ff;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 20px;
+    cursor: pointer;
+}
